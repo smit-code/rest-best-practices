@@ -3,7 +3,7 @@ function prepareSuccessResponse (data, message) {
     success: true,
     data,
     message,
-    totalRecords: data.length
+    totalRecords: data?.length
   }
 }
 

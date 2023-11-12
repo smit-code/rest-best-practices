@@ -1,5 +1,5 @@
 const DocumentDetail = require('../models/documentDetails')
-const { prepareSuccessResponse, prepareErrorResponse } = require("../utils/responseHandler");
+const { prepareSuccessResponse } = require("../utils/responseHandler");
 
 // ADD DOCUMENT DETAILS:-
 exports.addDocumentDetail = async (req, res) => {
@@ -20,7 +20,7 @@ exports.addDocumentDetail = async (req, res) => {
     })
 
     return res.status(201).json(
-        prepareSuccessResponse(documentDetail, 'document details added successfully.')
+        prepareSuccessResponse(documentDetail, 'Document details added successfully.')
     )
 
 }
@@ -30,7 +30,7 @@ exports.allDocumentsDetails = async (req, res) => {
     const documentDetails = await DocumentDetail.find().lean()
 
     return res.status(200).json(
-        prepareSuccessResponse(documentDetails, 'fetch all documents.')
+        prepareSuccessResponse(documentDetails, 'Document fetched successfully.')
     )
 
 }
@@ -48,13 +48,14 @@ exports.documentsDetailsById = async (req, res) => {
     }
 
     return res.status(200).json(
-        prepareSuccessResponse(documentDetail, 'Document detail fetched successfully.')
+        prepareSuccessResponse(documentDetail, 'Document details fetched successfully.')
     )
 }
 
 exports.updateDocumentDetail = async (req, res) => {
-    const _id = req.params.id
+
     const {
+        id: documentId,
         documentNumber,
         type,
         submittedDate,
@@ -68,7 +69,7 @@ exports.updateDocumentDetail = async (req, res) => {
         status
     } = req.body
 
-    const documentDetail = await DocumentDetail.findByIdAndUpdate(_id, {
+    const documentDetail = await DocumentDetail.findByIdAndUpdate(documentId, {
         documentNumber,
         type,
         submittedDate,
@@ -89,7 +90,7 @@ exports.updateDocumentDetail = async (req, res) => {
     }
 
     return res.status(200).json(
-        prepareSuccessResponse(documentDetail, 'document detail updated successfully.')
+        prepareSuccessResponse(documentDetail, 'Document details updated successfully.')
     )
 
 }
@@ -99,13 +100,13 @@ exports.removeDocumentDetail = async (req, res) => {
     const documentDetail = await DocumentDetail.findByIdAndDelete(_id)
 
     if (!documentDetail) {
-        const error = new Error('document detail not found.')
+        const error = new Error('Document details not found.')
         error.statusCode = 404
         throw error
     }
 
     return res.status(200).json(
-        prepareSuccessResponse(null, 'document deleted successfully.')
+        prepareSuccessResponse(null, 'Document deleted successfully.')
     )
 
 }

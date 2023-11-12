@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
 const documentDetailsSchema = Joi.object({
+  id: Joi.optional(),
   documentNumber: Joi.string().required().messages({
     'string.base': 'Document Number should be a type of string.',
     'any.required': 'Document Number is required.'

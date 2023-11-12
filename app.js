@@ -4,7 +4,6 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
 const cors = require('cors')
-// const seed = require('./seeders/seed')
 const routes = require('./routes/index')
 const { errorHandler } = require('./utils/errorHandler')
 
@@ -15,7 +14,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/api', routes)
-// seed.seedAdmin()
 app.use(errorHandler)
 
 app.listen(PORT, () => {

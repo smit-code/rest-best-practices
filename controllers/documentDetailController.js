@@ -1,4 +1,4 @@
-const DocumentDetail = require('../models/documentDetail')
+const DocumentDetail = require('../models/documentDetails')
 const { prepareSuccessResponse, prepareErrorResponse } = require("../utils/responseHandler");
 
 // ADD DOCUMENT DETAILS:-
@@ -20,24 +20,18 @@ exports.addDocumentDetail = async (req, res) => {
     })
 
     return res.status(201).json(
-        prepareSuccessResponse(documentDetail, 'document detail added.')
+        prepareSuccessResponse(documentDetail, 'document details added successfully.')
     )
 
 }
 
 // GET ALL DOCUMENT DETAILS:-
 exports.allDocumentsDetails = async (req, res) => {
-    try {
-        const documentdetails = await DocumentDetail.find()
+    const documentDetails = await DocumentDetail.find().lean()
 
-        return res.status(200).json(
-            prepareSuccessResponse(documentdetails, 'fetch all documents.')
-        )
-    } catch (error) {
-        return res.status(401).json(
-            prepareErrorResponse(error)
-        )
-    }
+    return res.status(200).json(
+        prepareSuccessResponse(documentDetails, 'fetch all documents.')
+    )
 
 }
 
@@ -45,16 +39,16 @@ exports.allDocumentsDetails = async (req, res) => {
 exports.documentsDetailsById = async (req, res) => {
     const _id = req.params.id;
 
-    const documentDetail = await DocumentDetail.findById(_id)
+    const documentDetail = await DocumentDetail.findById(_id).lean()
 
     if (!documentDetail) {
-        const error = new Error('can not found document.');
-        error.statusCode = 422;
+        const error = new Error('Document details not found.');
+        error.statusCode = 404;
         throw error;
     }
 
     return res.status(200).json(
-        prepareSuccessResponse(documentDetail, 'document detail fetched.')
+        prepareSuccessResponse(documentDetail, 'Document detail fetched successfully.')
     )
 }
 
@@ -74,54 +68,44 @@ exports.updateDocumentDetail = async (req, res) => {
         status
     } = req.body
 
-    try {
-        const documentDetail = await DocumentDetail.findByIdAndUpdate(_id, {
-            documentNumber,
-            type,
-            submittedDate,
-            issuedDate,
-            expiryDate,
-            numberVouchers,
-            guaranteeValue,
-            postage,
-            trackingNumber,
-            emailAddress,
-            status
-        })
+    const documentDetail = await DocumentDetail.findByIdAndUpdate(_id, {
+        documentNumber,
+        type,
+        submittedDate,
+        issuedDate,
+        expiryDate,
+        numberVouchers,
+        guaranteeValue,
+        postage,
+        trackingNumber,
+        emailAddress,
+        status
+    })
 
-        if (!documentDetail) {
-            const error = new Error('can not found document detail.');
-            error.statusCode = 401;
-            throw error
-        }
-
-        return res.status(200).json(
-            prepareSuccessResponse(documentDetail, 'document detail updated successfully.')
-        )
-    } catch (error) {
-        return res.status(error.statusCode).json(
-            prepareErrorResponse(error)
-        )
+    if (!documentDetail) {
+        const error = new Error('Document details not found.');
+        error.statusCode = 404;
+        throw error
     }
+
+    return res.status(200).json(
+        prepareSuccessResponse(documentDetail, 'document detail updated successfully.')
+    )
+
 }
 
 exports.removeDocumentDetail = async (req, res) => {
     const _id = req.params.id;
-    try {
-        const documentDetail = await DocumentDetail.findByIdAndDelete(_id)
+    const documentDetail = await DocumentDetail.findByIdAndDelete(_id)
 
-        if (!documentDetail) {
-            const error = new Error('document detail not found.')
-            error.statusCode = 401
-            throw error
-        }
-
-        return res.status(200).json(
-            prepareSuccessResponse(documentDetail, 'document deleted successfully.')
-        )
-    } catch (error) {
-        return res.status(error.statusCode).json(
-            prepareErrorResponse(error)
-        )
+    if (!documentDetail) {
+        const error = new Error('document detail not found.')
+        error.statusCode = 404
+        throw error
     }
+
+    return res.status(200).json(
+        prepareSuccessResponse(null, 'document deleted successfully.')
+    )
+
 }

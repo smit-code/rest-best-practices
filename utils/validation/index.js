@@ -1,7 +1,5 @@
-const addDocumentDetail = require('./addDocumentDetailsValidator')
-const updateDocumentDetail = require('./updateDocumentDetailValidator')
+const documentDetails = require('./documentDetailsValidator')
 
 module.exports = {
-  addDocumentDetail,
-  updateDocumentDetail
+  documentDetails
 }

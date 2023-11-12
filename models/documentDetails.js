@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const documentDetailSchema = new mongoose.Schema(
     {
         documentNumber: { 
-            type: Number
+            type: String
         },
         type: { 
             type: String
@@ -21,7 +21,7 @@ const documentDetailSchema = new mongoose.Schema(
             type: Number
         },
         guaranteeValue: { 
-            type: String
+            type: Number
         },
         postage: { 
             type: Number 

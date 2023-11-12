@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const documentDetail = require('./documentDetail/index')
+const documentDetails = require('./documentDetailsRoute')
 
-router.use('/document-detail',documentDetail)
+router.use('/document-details', documentDetails)
 
 module.exports = router

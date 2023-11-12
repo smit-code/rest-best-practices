@@ -9,9 +9,9 @@ const use = (fn) => (req, res, next) => {
 }
 
 router.get('/', use(allDocumentsDetails))
-router.post('/', Validator('addDocumentDetail'), use(addDocumentDetail))
+router.post('/', Validator('documentDetails'), use(addDocumentDetail))
 router.get('/:id', use(documentsDetailsById))
-router.put('/:id', Validator('addDocumentDetail'), use(updateDocumentDetail))
+router.put('/:id', Validator('documentDetails'), use(updateDocumentDetail))
 router.delete('/:id', use(removeDocumentDetail))
 
 module.exports = router

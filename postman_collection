@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "bc461990-bf8e-429c-9877-4f60c77731ad",
+		"name": "Rest APis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19296681",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "fetch all document details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/document-details",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"document-details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetch all document details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/document-details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "524"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20c-aiDoY/gSTnWaDXm/VLA4hqd4ZiY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Nov 2023 07:56:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"655079f23238f8cfb3105ad8\",\n            \"documentNumber\": \"123\",\n            \"type\": \"TypeA\",\n            \"submittedDate\": \"2023-01-01T00:00:00.000Z\",\n            \"issuedDate\": \"2023-02-01T00:00:00.000Z\",\n            \"expiryDate\": \"2023-12-31T00:00:00.000Z\",\n            \"numberVouchers\": 123,\n            \"guaranteeValue\": 1000,\n            \"postage\": 1243,\n            \"trackingNumber\": \"TRACK123up\",\n            \"emailAddress\": \"example@example.com\",\n            \"status\": \"Application Received\",\n            \"createdAt\": \"2023-11-12T07:08:34.114Z\",\n            \"updatedAt\": \"2023-11-12T07:56:39.033Z\",\n            \"__v\": 0\n        }\n    ],\n    \"message\": \"Document fetched successfully.\",\n    \"totalRecords\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "fetch document details by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/document-details/655079f23238f8cfb3105ad8",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"document-details",
+						"655079f23238f8cfb3105ad8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "fetch document details by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/document-details/655079f23238f8cfb3105ad8",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document-details",
+								"655079f23238f8cfb3105ad8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "513"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"201-X4TAAcL1GPOZ40UYCZntHVxzGGs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Nov 2023 07:56:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"655079f23238f8cfb3105ad8\",\n        \"documentNumber\": \"123\",\n        \"type\": \"TypeA\",\n        \"submittedDate\": \"2023-01-01T00:00:00.000Z\",\n        \"issuedDate\": \"2023-02-01T00:00:00.000Z\",\n        \"expiryDate\": \"2023-12-31T00:00:00.000Z\",\n        \"numberVouchers\": 123,\n        \"guaranteeValue\": 1000,\n        \"postage\": 1243,\n        \"trackingNumber\": \"TRACK123up\",\n        \"emailAddress\": \"example@example.com\",\n        \"status\": \"Application Received\",\n        \"createdAt\": \"2023-11-12T07:08:34.114Z\",\n        \"updatedAt\": \"2023-11-12T07:56:39.033Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Document details fetched successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create documentDetails",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentNumber\": \"123\",\r\n  \"type\": \"TypeA\",\r\n  \"submittedDate\": \"2023-01-01\",\r\n  \"issuedDate\": \"2023-02-01\",\r\n  \"expiryDate\": \"2023-12-31\",\r\n  \"numberVouchers\": \"123\",\r\n  \"guaranteeValue\": \"1000\",\r\n  \"postage\": \"123\",\r\n  \"trackingNumber\": \"TRACK123\",\r\n  \"emailAddress\": \"example@example.com\",\r\n  \"status\": \"Application Received\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/document-details",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"document-details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create documentDetails",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"documentNumber\": \"123\",\r\n  \"type\": \"TypeA\",\r\n  \"submittedDate\": \"2023-01-01\",\r\n  \"issuedDate\": \"2023-02-01\",\r\n  \"expiryDate\": \"2023-12-31\",\r\n  \"numberVouchers\": \"123\",\r\n  \"guaranteeValue\": \"1000\",\r\n  \"postage\": \"123\",\r\n  \"trackingNumber\": \"TRACK123\",\r\n  \"emailAddress\": \"example@example.com\",\r\n  \"status\": \"Application Received\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/document-details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document-details"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "508"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1fc-aCuSWNrkOKWBKG+GOt4q3hAgapM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Nov 2023 07:08:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"documentNumber\": \"123\",\n        \"type\": \"TypeA\",\n        \"submittedDate\": \"2023-01-01T00:00:00.000Z\",\n        \"issuedDate\": \"2023-02-01T00:00:00.000Z\",\n        \"expiryDate\": \"2023-12-31T00:00:00.000Z\",\n        \"numberVouchers\": 123,\n        \"guaranteeValue\": 1000,\n        \"postage\": 123,\n        \"trackingNumber\": \"TRACK123\",\n        \"emailAddress\": \"example@example.com\",\n        \"status\": \"Application Received\",\n        \"_id\": \"655079f23238f8cfb3105ad8\",\n        \"createdAt\": \"2023-11-12T07:08:34.114Z\",\n        \"updatedAt\": \"2023-11-12T07:08:34.114Z\",\n        \"__v\": 0\n    },\n    \"message\": \"document details added successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update document detail by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"655079f23238f8cfb3105ad8\", \r\n  \"documentNumber\": \"123\",\r\n  \"type\": \"TypeA\",\r\n  \"submittedDate\": \"2023-01-01\",\r\n  \"issuedDate\": \"2023-02-01\",\r\n  \"expiryDate\": \"2023-12-31\",\r\n  \"numberVouchers\": \"123\",\r\n  \"guaranteeValue\": \"1000\",\r\n  \"postage\": \"1243\",\r\n  \"trackingNumber\": \"TRACK123up\",\r\n  \"emailAddress\": \"example@example.com\",\r\n  \"status\": \"Application Received\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/document-details",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"document-details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update document detail by id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"655079f23238f8cfb3105ad8\", \r\n  \"documentNumber\": \"123\",\r\n  \"type\": \"TypeA\",\r\n  \"submittedDate\": \"2023-01-01\",\r\n  \"issuedDate\": \"2023-02-01\",\r\n  \"expiryDate\": \"2023-12-31\",\r\n  \"numberVouchers\": \"123\",\r\n  \"guaranteeValue\": \"1000\",\r\n  \"postage\": \"1243\",\r\n  \"trackingNumber\": \"TRACK123up\",\r\n  \"emailAddress\": \"example@example.com\",\r\n  \"status\": \"Application Received\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/document-details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "510"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1fe-haD7vxwFA7/onOyck+ztdm3IqLw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Nov 2023 07:56:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"655079f23238f8cfb3105ad8\",\n        \"documentNumber\": \"123\",\n        \"type\": \"TypeA\",\n        \"submittedDate\": \"2023-01-01T00:00:00.000Z\",\n        \"issuedDate\": \"2023-02-01T00:00:00.000Z\",\n        \"expiryDate\": \"2023-12-31T00:00:00.000Z\",\n        \"numberVouchers\": 123,\n        \"guaranteeValue\": 1000,\n        \"postage\": 123,\n        \"trackingNumber\": \"TRACK123\",\n        \"emailAddress\": \"example@example.com\",\n        \"status\": \"Application Received\",\n        \"createdAt\": \"2023-11-12T07:08:34.114Z\",\n        \"updatedAt\": \"2023-11-12T07:08:34.114Z\",\n        \"__v\": 0\n    },\n    \"message\": \"Document details updated successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete document details by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/document-details/65508585b5a95398336a9c2c",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"document-details",
+						"65508585b5a95398336a9c2c"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete document details by id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/document-details/65508585b5a95398336a9c2c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document-details",
+								"65508585b5a95398336a9c2c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-ZC4MXhoWT+nSxvieWGfTkPSslYA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Nov 2023 07:58:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": null,\n    \"message\": \"Document deleted successfully.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000/api",
+			"type": "string"
+		}
+	]
+}

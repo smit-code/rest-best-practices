@@ -8,7 +8,7 @@ const fileSchema = new mongoose.Schema(
         alt: { 
             type: String
         },
-        fileUrl: { 
+        fileName: { 
             type: String
         }
     },

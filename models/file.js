@@ -5,7 +5,7 @@ const fileSchema = new mongoose.Schema(
         user: { 
             type: String
         },
-        fileName: { 
+        alt: { 
             type: String
         },
         fileUrl: { 
@@ -15,5 +15,5 @@ const fileSchema = new mongoose.Schema(
     { timestamps: true }
   )
 
-  const File = mongoose.model('File',fileSchema)
+  const File = mongoose.model( 'File', fileSchema )
   module.exports =  File

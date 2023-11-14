@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { getTemplate, addTemplate } = require('../controllers/templateController')
+const { getTemplate, addFile } = require('../controllers/templateController')
 const { fileUpload } = require('../config/multer')
 
 const use = (fn) => (req, res, next) => {
@@ -9,6 +9,6 @@ const use = (fn) => (req, res, next) => {
 }
 
 router.get('/', use(getTemplate))
-router.post('/', fileUpload, use(addTemplate))
+router.post('/', fileUpload, use(addFile))
 
 module.exports = router
